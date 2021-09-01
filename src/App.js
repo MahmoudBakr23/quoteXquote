@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { saveData } from './Actions/saveData';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
+  const getData = async () => {
+    const response = await fetch('https://api.jikan.moe/v3/top/anime/2/bypopularity');
+    const myData = await response.json();
+
+    dispatch(saveData(myData.top));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const animes = useSelector((state) => state);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>quoteXquote</h1>
+      {animes.map((anime) => <h3 key={anime.mal_id}>{anime.title}</h3>)}
     </div>
   );
-}
+};
 
 export default App;
