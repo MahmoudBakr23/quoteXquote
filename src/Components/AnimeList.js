@@ -21,8 +21,9 @@ const AnimeList = () => {
 
   return (
     <div className="anime-list">
-      <Link to="/quotes">Quotes</Link>
-      {animes.animeReducer.map((anime) => <h3 key={anime.mal_id}>{anime.title}</h3>)}
+      {animes.animeReducer.map((anime) => (
+        <h3 key={anime.mal_id}><Link to={anime.title}>{anime.title}</Link></h3>
+      ))}
     </div>
   );
 };

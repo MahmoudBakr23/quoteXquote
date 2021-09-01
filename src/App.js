@@ -10,7 +10,7 @@ const App = () => (
       <h1>quoteXquote</h1>
       <Switch>
         <Route path="/" component={AnimeList} exact />
-        <Route path="/quotes" component={QuoteList} />
+        <Route path="/:anime" component={QuoteList} />
       </Switch>
     </div>
   </BrowserRouter>
