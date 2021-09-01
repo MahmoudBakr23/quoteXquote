@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
-import animeReducer from './anime';
+import reducer from './index';
 
-const store = createStore(animeReducer);
+const store = createStore(reducer);
 
 export default store;

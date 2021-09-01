@@ -1,10 +1,10 @@
-import { SAVE_DATA } from '../Actions/saveData';
+import { SAVE_ANIME } from '../Actions/saveAnime';
 
 const initialState = [];
 
 const animeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SAVE_DATA:
+    case SAVE_ANIME:
       return action.payload;
     default:
       return state;
