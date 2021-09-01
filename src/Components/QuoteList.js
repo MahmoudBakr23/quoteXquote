@@ -11,7 +11,6 @@ const QuoteList = () => {
     const myData = await response.json();
 
     dispatch(saveQuote(myData));
-    console.log(myData);
   };
 
   useEffect(() => {
