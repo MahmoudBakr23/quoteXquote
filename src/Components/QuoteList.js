@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { saveQuote } from '../Actions/saveQuote';
 import { changeChar } from '../Actions/search';
-import Search from './Search';
+import CharSearch from './CharSearch';
 
 const QuoteList = () => {
   const params = useParams();
@@ -12,8 +12,10 @@ const QuoteList = () => {
 
   const getData = async () => {
     const response = await fetch(`https://animechan.vercel.app/api/quotes/anime?title=${params.anime}`);
+    if (response.status === 404) {
+      return;
+    }
     const myData = await response.json();
-
     dispatch(saveQuote(myData));
   };
 
@@ -37,12 +39,17 @@ const QuoteList = () => {
 
   return (
     <div className="anime-list">
-      <Search handleSearch={handleSearch} />
-      <h3>{params.anime}</h3>
+      <CharSearch handleSearch={handleSearch} />
+      <h2>
+        <span>
+          Anime:
+        </span>
+        {params.anime}
+      </h2>
       {quotesDisplay().map((quote, index) => (
-        <div key={index}>
+        <div key={index} className="quote-details">
           <h5>{quote.character}</h5>
-          <h4>{quote.quote}</h4>
+          <p>{quote.quote}</p>
         </div>
       ))}
     </div>
