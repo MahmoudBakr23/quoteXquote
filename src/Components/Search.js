@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Search = ({ handleSearch }) => (
   <div className="search-select">
@@ -15,3 +15,11 @@ const Search = ({ handleSearch }) => (
 );
 
 export default Search;
+
+Search.propTypes = {
+  handleSearch: PropTypes.func,
+};
+
+Search.defaultProps = {
+  handleSearch: null,
+};
