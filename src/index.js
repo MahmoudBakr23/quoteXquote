@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </>,
   document.getElementById('root'),
 );
 

@@ -8,17 +8,19 @@ import Header from './Header';
 import store from '../Reducers/store';
 
 const App = () => (
-  <BrowserRouter>
+  <>
     <Provider store={store}>
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route path="/" component={AnimeList} exact />
-          <Route path="/:anime" component={QuoteList} />
-        </Switch>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route path="/" component={AnimeList} exact />
+            <Route path="/:anime" component={QuoteList} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     </Provider>
-  </BrowserRouter>
+  </>
 );
 
 export default App;
