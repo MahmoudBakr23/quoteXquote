@@ -20,6 +20,15 @@ it('Should not return a null title', () => {
   expect(anime.title).not.toEqual(null);
 });
 
+it('Should return an array of anime list', () => {
+  const getData = async () => {
+    const response = await fetch('https://api.jikan.moe/v3/top/anime/1/bypopularity');
+    const myData = await response.json();
+    return myData.top;
+  };
+  expect(getData()).not.toEqual(null);
+});
+
 it('Expect to render Anime List component', () => {
   const result = renderer.create(
     <Provider store={store}>
