@@ -21,13 +21,13 @@ it('Should not return a null title', () => {
 });
 
 it('Should return an array of quote list', () => {
-    const getData = async () => {
-      const response = await fetch('https://animechan.vercel.app/api/quotes/anime?title=Bleach');
-      const myData = await response.json();
-      return myData.top;
-    };
-    expect(getData()).not.toEqual(null);
-  });
+  const getData = async () => {
+    const response = await fetch('https://animechan.vercel.app/api/quotes/anime?title=Bleach');
+    const myData = await response.json();
+    return myData.top;
+  };
+  expect(getData()).not.toEqual(null);
+});
 
 it('Expect to render Quote List component', () => {
   const result = renderer.create(
