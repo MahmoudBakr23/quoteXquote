@@ -1,0 +1,180 @@
+$dark-color: #464752;
+$base-color: #112457;
+$second-color: #2d5699;
+$icons-color: #bfb1a7;
+$bg-color: #080a13;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $dark-color;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  width: 90%;
+  margin: 0 auto;
+  background-color: $bg-color;
+  display: flex;
+  padding: 1rem 0;
+  border-bottom: 2px solid #fff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/originals/4e/81/1d/4e811dbd308367844a5dfe668e42400d.jpg');
+  background-size: cover;
+  background-position: 20% 20%;
+
+  .logo {
+    margin: 0 auto;
+
+    a {
+      color: $second-color;
+      font-size: 2rem;
+      font-weight: bold;
+
+      span {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.App {
+  width: 90%;
+  background-color: $bg-color;
+  margin: 0 auto;
+}
+
+.anime-list {
+  width: 100%;
+  padding: 1rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+
+  .suggestions {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+  }
+
+  .search-select {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/originals/4e/81/1d/4e811dbd308367844a5dfe668e42400d.jpg');
+    background-size: cover;
+    background-position: center center;
+    grid-column: 1/-1;
+    padding: 4rem 0;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 2px solid #fff;
+    text-align: center;
+
+    input {
+      padding: 0.5rem 10rem;
+      border: 0;
+      outline: 0;
+      border-radius: 5px;
+      text-align: center;
+      background-color: $bg-color;
+      color: $icons-color;
+    }
+
+    .hint {
+      display: flex;
+      justify-content: center;
+      color: $icons-color;
+
+      li {
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  h2 {
+    grid-column: 1/-1;
+    justify-self: center;
+    color: #2d5699;
+    font-weight: bold;
+    font-size: 2rem;
+
+    span {
+      color: #fff;
+    }
+  }
+
+  .quote-details {
+    grid-column: 1/-1;
+    background-color: #fff;
+    box-shadow: 2px 5px 10px $dark-color;
+    padding: 1rem;
+    border-radius: 5px;
+
+    h5 {
+      color: $dark-color;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $second-color;
+      font-family: sans-serif;
+      font-weight: 600;
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .anime-list {
+    width: 100%;
+    padding: 1rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+
+    .suggestions {
+      grid-column: 1/-1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+
+    .search-select {
+      input {
+        padding: 0.5rem 4rem;
+      }
+
+      .hint {
+        li {
+          padding: 0 0.5rem;
+        }
+      }
+    }
+
+    .quote-details {
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
