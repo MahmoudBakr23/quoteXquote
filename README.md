@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # QxQ
-
+### [Catalogue of Statistics](https://www.notion.so/Catalogue-of-Statistics-72446e7fa33c403a9b6a0bc1de5c6cf5)
 > This is an anime quotes application that fetches data from an endpoint and renderes it to the screen using React and Redux
 ![screenshot](./src/Screenshot.png)
 
